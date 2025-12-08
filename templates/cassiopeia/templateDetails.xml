@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="template" client="site">
+  <name>cassiopeia</name>
+  <version>1.0</version>
+  <creationDate>2017-02</creationDate>
+  <author>Joomla! Project</author>
+  <authorEmail>admin@joomla.org</authorEmail>
+  <copyright>(C) 2017 Open Source Matters, Inc.</copyright>
+  <description>TPL_CASSIOPEIA_XML_DESCRIPTION</description>
+  <inheritable>1</inheritable>
+  <files>
+    <filename>component.php</filename>
+    <filename>error.php</filename>
+    <filename>index.php</filename>
+    <filename>joomla.asset.json</filename>
+    <filename>offline.php</filename>
+    <filename>templateDetails.xml</filename>
+    <folder>html</folder>
+  </files>
+  <media destination="templates/site/cassiopeia" folder="media">
+    <folder>js</folder>
+    <folder>css</folder>
+    <folder>scss</folder>
+    <folder>images</folder>
+  </media>
+  <positions>
+    <position>topbar</position>
+    <position>below-top</position>
+    <position>menu</position>
+    <position>search</position>
+    <position>banner</position>
+    <position>top-a</position>
+    <position>top-b</position>
+    <position>main-top</position>
+    <position>main-bottom</position>
+    <position>breadcrumbs</position>
+    <position>sidebar-left</position>
+    <position>sidebar-right</position>
+    <position>bottom-a</position>
+    <position>bottom-b</position>
+    <position>footer</position>
+    <!-- used directly in the error.php and included here so the position will appear in the list of available positions -->
+    <position>error-403</position>
+    <position>error-404</position>
+  </positions>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/tpl_cassiopeia.ini</language>
+    <language tag="en-GB">en-GB/tpl_cassiopeia.sys.ini</language>
+  </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="advanced">
+        <field name="brand" type="radio" label="TPL_CASSIOPEIA_BRAND_LABEL" default="1" layout="joomla.form.field.radio.switcher" filter="options">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field name="logoFile" type="media" schemes="http,https,ftp,ftps,data,file" validate="url" relative="true" default="" label="TPL_CASSIOPEIA_LOGO_LABEL" showon="brand:1" />
+        <field name="siteTitle" type="text" default="" label="TPL_CASSIOPEIA_TITLE_LABEL" filter="string" showon="brand:1" />
+        <field name="siteDescription" type="text" default="" label="TPL_CASSIOPEIA_TAGLINE_LABEL" description="TPL_CASSIOPEIA_TAGLINE_DESC" filter="string" showon="brand:1" />
+        <field name="useFontScheme" type="groupedlist" label="TPL_CASSIOPEIA_FONT_LABEL" default="0">
+          <option value="0">JNONE</option>
+          <group label="TPL_CASSIOPEIA_FONT_SYSTEM">
+            <option value="system">TPL_CASSIOPEIA_FONT_SYSTEM_SELECT</option>
+          </group>
+          <group label="TPL_CASSIOPEIA_FONT_GROUP_LOCAL">
+            <option value="media/templates/site/cassiopeia/css/global/fonts-local_roboto.css">Roboto (local)</option>
+          </group>
+          <group label="TPL_CASSIOPEIA_FONT_GROUP_WEB">
+            <option value="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;300;400;700&amp;display=swap">Fira Sans (web)</option>
+            <option value="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;700&amp;family=Roboto:wght@100;300;400;700&amp;display=swap">Roboto + Noto Sans (web)</option>
+          </group>
+        </field>
+        <field name="systemFontBody" type="list" label="TPL_CASSIOPEIA_FONT_SYSTEM_BODY" default="" validate="options" showon="useFontScheme:system">
+          <option value="">JSELECT</option>
+          <option value="Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif">TPL_CASSIOPEIA_FONT_SYSTEM_STACK_SYSTEM_TRANSITIONAL</option>
+          <option value="'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif">TPL_CASSIOPEIA_FONT_SYSTEM_STACK_SYSTEM_OLDSTYLE</option>
+          <option value="Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif">TPL_CASSIOPEIA_FONT_SYSTEM_STACK_SYSTEM_HUMANIST</option>
